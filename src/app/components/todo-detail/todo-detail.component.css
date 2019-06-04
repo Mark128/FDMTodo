@@ -1,0 +1,19 @@
+.todoContainer{
+    margin-top: 5%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.card{
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.card-title{
+    text-align: center;
+}
+
+#text-heading{
+    font: bold;
+}

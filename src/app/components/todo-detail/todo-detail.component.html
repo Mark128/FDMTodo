@@ -1,3 +1,20 @@
-<p>
-  todo-detail works!
-</p>
+<div class="todoContainer">
+  <div class="card border-info">
+    <div class="card-body">
+      <h1 class="card-title">{{todoItem?.id}}: {{todoItem.title}}</h1>
+      <hr>
+      <h4 class="card-text">{{todoItem?.description}}</h4>
+      <br>
+      <p class="card-text">This is a better description of the item</p>
+      <p class="card-text"> Started: {{todoItem?.dateOfCreation | date: shortDate}} </p>
+      <p class="card-text"> ETA: 06/29/2019</p>
+      <br>
+      <button class="btn btn-primary btn-lg btn-block">Show tasks</button>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div *ngFor="let task of todoItem?.tasks">
+    <h5>{{task.taskName}}</h5>
+  </div>
+</div>

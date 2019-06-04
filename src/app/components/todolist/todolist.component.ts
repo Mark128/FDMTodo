@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ITODO } from 'src/app/data/todo';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'todolist',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodolistComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  todoList = [];
+  
+  constructor(private todoService: TodoService) {   
   }
 
+  ngOnInit() {
+    this.todoList = this.todoService.getAllTodos();
+  } 
 }
+
+

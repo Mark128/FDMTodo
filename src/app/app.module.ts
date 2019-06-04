@@ -12,6 +12,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { TodoService } from './services/todo.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    TodoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

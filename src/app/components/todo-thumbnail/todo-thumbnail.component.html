@@ -1,3 +1,7 @@
-<p>
-  todo-thumbnail works!
-</p>
+<div class="card" [routerLink]="['/tododetail', todo?.id]">
+  <div class="card-body">
+    <h2 class="card-title">{{todo?.title}}</h2>
+    <h5 class="card-subtitle">{{todo?.description}}</h5>
+    <p class="card-text">Created: {{todo?.dateOfCreation | date: shortDate}}</p>
+  </div>
+</div>

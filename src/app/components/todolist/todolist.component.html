@@ -1,3 +1,5 @@
-<p>
-  todolist works!
-</p>
+<div class="todoContainer">
+  <div class="row">
+    <todo-thumbnail class="col-sm-4" *ngFor="let todoItem of todoList" [todo]="todoItem"></todo-thumbnail>
+  </div>
+</div>

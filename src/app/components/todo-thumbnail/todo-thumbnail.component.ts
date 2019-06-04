@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ITODO } from 'src/app/data/todo';
 
 @Component({
   selector: 'todo-thumbnail',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoThumbnailComponent implements OnInit {
 
+  @Input() todo: ITODO;
+  
+
   constructor() { }
 
   ngOnInit() {
   }
-
 }

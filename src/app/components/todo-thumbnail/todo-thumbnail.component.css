@@ -1,0 +1,8 @@
+.card{
+    width: 20em;   
+}
+
+.card:hover{
+    background-color:lightblue;
+    cursor: pointer;
+}
