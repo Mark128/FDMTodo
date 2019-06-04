@@ -8,6 +8,10 @@ import { TodoThumbnailComponent } from './components/todo-thumbnail/todo-thumbna
 import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
 import { TaskThumbnailComponent } from './components/task-thumbnail/task-thumbnail.component';
 import { TaskDetailComponent } from './components/task-detail/task-detail.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+import { TodolistComponent } from './components/todolist/todolist.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +21,14 @@ import { TaskDetailComponent } from './components/task-detail/task-detail.compon
     TodoThumbnailComponent,
     TodoDetailComponent,
     TaskThumbnailComponent,
-    TaskDetailComponent
+    TaskDetailComponent,
+    HomeComponent,
+    TodolistComponent,
+    ProfileComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
