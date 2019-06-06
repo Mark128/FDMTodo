@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -13,6 +17,12 @@ import { HomeComponent } from './components/home/home.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { TodoService } from './services/todo.service';
+import { AddNewTodoComponent } from './components/add-new-todo/add-new-todo.component';
+import { AddTaskComponent } from './components/add-task/add-task.component';
+import { CanDeactivateGuard } from './can-deactivate.guard';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { todoListBackendService } from './todoList.backend.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,14 +35,26 @@ import { TodoService } from './services/todo.service';
     TaskDetailComponent,
     HomeComponent,
     TodolistComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddNewTodoComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule, 
+    HttpClientModule,
+    InMemoryWebApiModule.forRoot(todoListBackendService),
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true}) 
   ],
   providers: [
-    TodoService
+    TodoService,
+    CanDeactivateGuard
   ],
   bootstrap: [AppComponent]
 })

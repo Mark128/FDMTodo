@@ -1,0 +1,30 @@
+<div class="formContainer">
+  <h2 class="formHeader">Create a New TODO Item Below</h2>
+  <form #todoForm="ngForm" (ngSubmit)="onSubmit(todoForm.value)" autocomplete="off">
+    <h4>Todo Title</h4>
+    <input type="text" class="form-control" (ngModel)="title" name="title" placeholder="Add Todo Title" #title="ngModel" required>
+    <div *ngIf="title.invalid && (title.dirty || title.touched)"  class="alert alert-danger">
+        <div *ngIf="title.errors.required">Title is required</div>
+    </div>
+    <br>
+    
+    <h4>Todo Description</h4>
+    <input type="text" class="form-control" (ngModel)="description" name="description" placeholder="Add Todo Description" #description="ngModel" required>
+    <div *ngIf="description.invalid && (description.dirty || description.touched)"  class="alert alert-danger">
+        <div *ngIf="description.errors.required">Description is required</div>
+    </div>
+    <br>
+    <h4>Todo Due Date</h4>
+    <input type="date" class="form-control" (ngModel)="dueDate" name="dueDate" placeholder="Enter Due Date" #dueDate="ngModel" required>
+    <div *ngIf="dueDate.invalid && (dueDate.dirty || dueDate.touched)"  class="alert alert-danger">
+        <div *ngIf="dueDate.errors.required">Due date is required</div>
+    </div>
+    <br>
+    <h4>Todo Status</h4>
+    <select type="select" class="form-control" (ngModel)="status" name="status" placeholder="Enter Todo Status">
+        <option *ngFor="let status of statusOptions" [value]="status">{{status}}</option>
+    </select>
+    <br>
+    <button type="submit" class="btn btn-info" [disabled]="todoForm.form.invalid">Submit New Todo</button>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+<div class="formContainer">
+  <form [formGroup]="taskForm" (ngSubmit)="submitTask()">
+    <label>TODO ID:</label>
+    <input type="text" class="form-control" formControlName="todoID">
+    <br>
+    <label>Task Name:</label>
+    <input type="text" class="form-control" formControlName="taskName" placeholder="Add Task Name" required>
+    <div *ngIf="taskForm.controls.taskName.invalid && (taskForm.controls.taskName.dirty || taskForm.controls.taskName.touched)"  class="alert alert-danger">
+        <div *ngIf="taskForm.controls.taskName.errors.required">Required</div>
+        <div *ngIf="taskForm.controls.taskName.errors.restrictedWords">Cant contain restricted words</div>
+    </div>
+    <br>
+    <label>Task Description:</label>
+    <input type="text" class="form-control" formControlName="taskDescription" placeholder="Add Task Description" required>
+    <div *ngIf="taskForm.controls.taskDescription.invalid && (taskForm.controls.taskDescription.dirty || taskForm.controls.taskDescription.touched)"  class="alert alert-danger">
+        <div *ngIf="taskForm.controls.taskDescription.errors.required">Required</div>
+        <div *ngIf="taskForm.controls.taskDescription.errors.restrictedWords">Cant contain restricted words</div>
+    </div>
+    <br>
+    <label>Task Due Date:</label>
+    <input type="date" class="form-control" formControlName="taskDeadlineDate" placeholder="Add Due Date">
+    <br>
+    <label>Add Task Status:</label>
+    <select type="select" class="form-control" formControlName="status" placeholder="Enter Task Status">
+      <option *ngFor="let status of statusOptions" [value]="status">{{status}}</option>
+    </select>
+    <br>
+    <button type="submit" class="btn btn-success" [disabled]="taskForm.invalid">Add Task</button>
+    <button type="button" class="btn btn-warning" (click)="cancel()">Cancel</button>
+  </form>
+</div>

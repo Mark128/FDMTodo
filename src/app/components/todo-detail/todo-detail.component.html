@@ -1,7 +1,10 @@
 <div class="todoContainer">
   <div class="card border-info">
     <div class="card-body">
-      <h1 class="card-title">{{todoItem?.id}}: {{todoItem.title}}</h1>
+      <div class="taskButton">
+        <button class="btn btn-warning" (click)="addTask()">Add Task</button>
+      </div>
+      <h1 class="card-title">{{todoItem?.id}}: {{todoItem?.title}}</h1>
       <hr>
       <h4 class="card-text">{{todoItem?.description}}</h4>
       <br>
@@ -9,12 +12,18 @@
       <p class="card-text"> Started: {{todoItem?.dateOfCreation | date: shortDate}} </p>
       <p class="card-text"> ETA: 06/29/2019</p>
       <br>
-      <button class="btn btn-primary btn-lg btn-block">Show tasks</button>
+      <button class="btn btn-primary btn-lg btn-block" (click)="toggleTaskView()">Show tasks</button>
     </div>
   </div>
   <br>
   <br>
-  <div *ngFor="let task of todoItem?.tasks">
-    <h5>{{task.taskName}}</h5>
+</div>
+
+<div *ngIf="showTasks">
+  <div class="card" *ngFor="let task of todoItem?.tasks">
+    <h5 class="card-title">{{task.taskName}}</h5>
+    <p class="card-text">{{task.taskDescription}}</p>
+    <p class="card-text">Created: {{task.taskCreationDate | date: shortDate}}</p>
+    <p class="card-text">Deadline: {{task.taskDeadlineDate | date: shortDate}}</p>
   </div>
 </div>

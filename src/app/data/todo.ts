@@ -7,6 +7,7 @@ export interface ITODO {
     status: string,
     dateOfCreation: Date 
     dateOfCompletion?: Date,
-    tasks: ITask[]  
+    dueDate?: Date,
+    tasks?: ITask[]  
 }
 
