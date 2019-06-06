@@ -15,7 +15,6 @@ import { TaskDetailComponent } from './components/task-detail/task-detail.compon
 import { AppRoutingModule } from './/app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { TodoService } from './services/todo.service';
 import { AddNewTodoComponent } from './components/add-new-todo/add-new-todo.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
@@ -23,6 +22,7 @@ import { CanDeactivateGuard } from './can-deactivate.guard';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { todoListBackendService } from './todoList.backend.service';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +35,6 @@ import { HttpClientModule } from '@angular/common/http';
     TaskDetailComponent,
     HomeComponent,
     TodolistComponent,
-    ProfileComponent,
     AddNewTodoComponent,
     AddTaskComponent
   ],

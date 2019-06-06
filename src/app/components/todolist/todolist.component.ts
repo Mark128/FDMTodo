@@ -12,7 +12,7 @@ export class TodolistComponent implements OnInit {
 
   todoList;
   
-  constructor(private route: ActivatedRoute, private todoService: TodoService) {   
+  constructor(private route: ActivatedRoute) {   
   }
 
   ngOnInit() {
